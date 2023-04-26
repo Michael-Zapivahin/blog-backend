@@ -112,6 +112,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+static/
+media/
+.idea/
 
 # Spyder project settings
 .spyderproject
@@ -136,9 +139,4 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-.idea/blog-backend.iml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/inspectionProfiles/Project_Default.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/vcs.xml
+.DS_Store
