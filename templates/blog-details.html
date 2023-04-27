@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 {% extends 'blog-base.html' %}
-{% load static %}
+{% block title %}
+<title>{{ post.title }} - Blog Details</title>
+{% endblock %}
 {% block content %}
   <!--================ Start Blog Post Area =================-->
   <section class="blog-post-area section-margin">
