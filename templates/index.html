@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+{% extends 'blog-base.html' %}
 {% load static %}
+{% block content %}
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
@@ -89,15 +91,15 @@
               <div class="thumb">
                 <img class="img-fluid" src={{post.image_url}} alt="">
                 <ul class="thumb-info" max-width = 550px>
-                  <li><a href="#"><i class="ti-user"></i>{{post.author}}</a></li>
-                  <li><a href="#"><i class="ti-notepad"></i>{{post.published_at}}</a></li>
-                  <li><a href="#"><i class="ti-themify-favicon"></i>{{post.likes_count}} Comments</a></li>
+                  <li><a href=post/{{post.slug}}><i class="ti-user"></i>{{post.author}}</a></li>
+                  <li><a href=post/{{post.slug}}><i class="ti-notepad"></i>{{post.published_at}}</a></li>
+                  <li><a href=post/{{post.slug}}><i class="ti-themify-favicon"></i>{{post.likes_count}} Comments</a></li>
                 </ul>
               </div>
               <div class="details mt-20">
                <h3>{{post.title}}</h3>
                 <p>{{post.text|truncatechars_html:200}}</p>
-                <a class="button" href="#">Read More <i class="ti-arrow-right"></i></a>
+                <a class="button" href=post/{{post.slug}}>Read More <i class="ti-arrow-right"></i></a>
               </div>
             </div>
             {% endfor %}
@@ -231,3 +233,4 @@
   <script src="/static/scripts.js"></script>
 </body>
 </html>
+{% endblock %}
