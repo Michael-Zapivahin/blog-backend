@@ -18,6 +18,7 @@ def serialize_post(post):
         "image_url": post.image.url if post.image else None,
         "published_at": post.published_at,
         "slug": post.slug,
+        "likes_count": post.likes.count
     }
 
 
