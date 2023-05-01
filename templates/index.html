@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 {% extends 'blog-base.html' %}
+{% load static %}
 {% block title %}
-<title>Sensive Blog - Home</title>
+  <title>Sensive Blog - Home</title>
 {% endblock %}
 {% block content %}
     <!--================ Blog slider start =================-->
@@ -34,7 +35,11 @@
             {% for post in fresh_posts %}
             <div class="single-recent-blog-post">
               <div class="thumb">
-                <img class="img-fluid" src={{post.image_url}} alt="image of post "{{post.title}}>
+                {% if post.image_url %}
+                  <img class="img-fluid" src={{post.image_url}} alt="image of post "{{post.title}}>
+                {% else %}
+                  <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="image of post "{{post.title}}>
+                {% endif %}
                 <ul class="thumb-info" max-width = 550px>
                   <li><a href=post/{{post.slug}}><i class="ti-user"></i>{{post.author}}</a></li>
                   <li><a href=post/{{post.slug}}><i class="ti-notepad"></i>{{post.published_at}}</a></li>
