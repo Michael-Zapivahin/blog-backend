@@ -48,7 +48,7 @@ def post_detail(request, slug):
         serialized_comments.append({
             'text': comment.text,
             'published_at': comment.published_at,
-            'author': comment.author.username,
+            'author': comment.author.username
         })
 
     serialized_post = {
@@ -56,6 +56,7 @@ def post_detail(request, slug):
         "text": post.text,
         "author": post.author.username,
         "comments": serialized_comments,
+        "comments_count": len(serialized_comments),
         'likes_amount': post.likes.count(),
         "image_url": post.image.url if post.image else None,
         "published_at": post.published_at,
